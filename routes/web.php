@@ -17,3 +17,7 @@ Route::get('/', function () {
 Route::get('/books/{genre}/{id?}', function ($genre, $id = 12) {
     return "Books in the ". ($genre + $id) ." category.";
 });
+Route::get('/book/{id?}', function ($id = 7) {
+    $data['render'] = 'render'.$id;
+   return view('test', ['data' => $data]);
+});
